@@ -50,13 +50,13 @@ body.light-mode {
     transition-duration: 2s;
 }
 
-.light-mode .bottom-bar {
+.light-mode .bottom-bar .links{
     background-color: whitesmoke;
     color: rgba(10,10,10,0.9);
     transition-duration: 2s;
 }
 
-.dark-mode .bottom-bar {
+.dark-mode .bottom-bar .links{
     background-color: #272a30;
     color: whitesmoke;
     transition-duration: 2s;
@@ -217,7 +217,6 @@ button {
 }
 
 .bottom-bar .links {
-    color: whitesmoke;
     text-decoration: none;
     margin: 8px;
     font-size: 90%;
