@@ -117,4 +117,170 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
         showBanner();
     }
+
+
+    //cart logic
+
+    const CART_KEY = "dingir-cart-v1";
+
+    function loadCart() {
+        try {
+            const raw = localStorage.getItem(CART_KEY);
+            const cart = raw ? JSON.parse(raw) : [];
+            return Array.isArray(cart) ? cart : [];
+        } catch {
+            return [];
+        }
+    }
+
+    function saveCart(cart) {
+        try {
+            localStorage.setItem(CART_KEY, JSON.stringify(cart));
+        } catch {
+            // ignore
+        }
+    }
+
+    function addToCart(item) {
+        const cart = loadCart();
+
+        // If same product + plan exists, increase qty
+        const existing = cart.find(
+            (x) => x.id === item.id && x.plan === item.plan
+        );
+
+        if (existing) {
+            existing.qty += item.qty ?? 1;
+        } else {
+            cart.push({
+                id: item.id,
+                name: item.name,
+                plan: item.plan ?? "Standard",
+                priceCents: Number(item.priceCents ?? 0),
+                qty: Number(item.qty ?? 1),
+            });
+        }
+
+        saveCart(cart);
+    }
+
+    function removeFromCart(id, plan) {
+        const cart = loadCart().filter((x) => !(x.id === id && x.plan === plan));
+        saveCart(cart);
+    }
+
+    function clearCart() {
+        saveCart([]);
+    }
+
+    function formatEUR(cents) {
+        const euros = (cents / 100).toFixed(2).replace(".", ",");
+        return `€ ${euros}`;
+    }
+
+    function calcTotal(cart) {
+        return cart.reduce((sum, item) => sum + item.priceCents * item.qty, 0);
+    }
+
+    function renderCart() {
+        const container = document.getElementById("basket-items");
+        const totalEl = document.getElementById("basket-total");
+        const emptyEl = document.getElementById("basket-empty");
+
+        // If this page doesn't have cart UI, do nothing
+        if (!container || !totalEl) return;
+
+        const cart = loadCart();
+
+        container.innerHTML = "";
+
+        if (emptyEl) emptyEl.hidden = cart.length !== 0;
+
+        if (cart.length === 0) {
+            totalEl.textContent = formatEUR(0);
+            return;
+        }
+
+        for (const item of cart) {
+            const row = document.createElement("div");
+            row.className = "basket-row";
+
+            const left = document.createElement("div");
+            left.className = "basket-info";
+            left.innerHTML = `
+      <strong>${item.name}</strong><br>
+      <span>Modell: ${item.plan}</span><br>
+      <span>Menge: ${item.qty}</span>
+    `;
+
+            const right = document.createElement("div");
+            right.className = "basket-actions";
+
+            const price = document.createElement("span");
+            price.textContent = formatEUR(item.priceCents * item.qty);
+
+            const btn = document.createElement("button");
+            btn.type = "button";
+            btn.className = "button";
+            btn.textContent = "Entfernen";
+            btn.addEventListener("click", () => {
+                removeFromCart(item.id, item.plan);
+                renderCart();
+            });
+
+            right.appendChild(price);
+            right.appendChild(document.createTextNode(" "));
+            right.appendChild(btn);
+
+            row.appendChild(left);
+            row.appendChild(right);
+
+            container.appendChild(row);
+        }
+
+        totalEl.textContent = formatEUR(calcTotal(cart));
+    }
+
+// Hook up "Add to cart" buttons anywhere
+    function setupAddToCartButtons() {
+        const buttons = document.querySelectorAll("[data-add-to-cart]");
+        if (!buttons.length) return;
+
+        buttons.forEach((btn) => {
+            btn.addEventListener("click", () => {
+                const id = btn.getAttribute("data-id") || "unknown";
+                const name = btn.getAttribute("data-name") || "Produkt";
+                const plan = btn.getAttribute("data-plan") || "Standard";
+                const priceCents = Number(btn.getAttribute("data-price-cents") || "0");
+
+                addToCart({ id, name, plan, priceCents, qty: 1 });
+
+                // Optional feedback
+                alert(`${name} wurde zum Warenkorb hinzugefügt.`);
+            });
+        });
+    }
+
+    function setupCheckoutButton() {
+        const checkoutBtn = document.getElementById("basket-checkout");
+        if (!checkoutBtn) return;
+
+        checkoutBtn.addEventListener("click", () => {
+            const cart = loadCart();
+            if (cart.length === 0) {
+                alert("Dein Warenkorb ist leer.");
+                return;
+            }
+
+            // Mock purchase
+            clearCart();
+            renderCart();
+            alert("Vielen Dank für den Einkauf!");
+        });
+    }
+
+// Call these after your DOMContentLoaded setup has run:
+    setupAddToCartButtons();
+    renderCart();
+    setupCheckoutButton();
 });

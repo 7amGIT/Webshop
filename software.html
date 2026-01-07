@@ -1,66 +1,224 @@
 <!DOCTYPE html>
 <html lang="de">
-
 <head>
-    <link href="style.css" rel="stylesheet">
-    <meta charset="UTF-8">
-    <script src="ui.js"></script>
-    <title>Software</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="style.css" rel="stylesheet" />
+    <script src="ui.js" defer></script>
+    <title>Software – DINGIR</title>
 </head>
 
-    <body>
-    <nav class="top-bar">
-        <img class="logo" src="logo.png" alt="logo">
+<body>
+<a href="#main-content" class="skip-link">Zum Inhalt springen</a>
+
+<header>
+    <nav class="top-bar" aria-label="Hauptnavigation">
+        <a href="./index.html" class="brand" aria-label="DINGIR Startseite">
+            <img class="logo" src="logo.png" alt="DINGIR Logo" />
+        </a>
 
         <div class="buttons">
             <a href="./index.html" class="button">Home</a>
-            <a href="./software.html" class="button"> Software </a>
-            <a href="./about.html" class="button"> About </a>
-            <a href="./basket.html" class="button">
-                <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312"/>
-                </svg>
+            <a href="./software.html" class="button" aria-current="page">Software</a>
+            <a href="./about.html" class="button">About</a>
 
+            <a href="./basket.html" class="button" aria-label="Warenkorb öffnen">
+                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312" />
+                </svg>
             </a>
-            <button class="button" id="mode">
-                <span class="visually-hidden">Toggle dark mode</span>
 
-                <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                    <path fill-rule="evenodd" d="M7.05 4.05A7 7 0 0 1 19 9c0 2.407-1.197 3.874-2.186 5.084l-.04.048C15.77 15.362 15 16.34 15 18a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1c0-1.612-.77-2.613-1.78-3.875l-.045-.056C6.193 12.842 5 11.352 5 9a7 7 0 0 1 2.05-4.95ZM9 21a1 1 0 0 1 1-1h4a1 1 0 1 1 0 2h-4a1 1 0 0 1-1-1Zm1.586-13.414A2 2 0 0 1 12 7a1 1 0 1 0 0-2 4 4 0 0 0-4 4 1 1 0 0 0 2 0 2 2 0 0 1 .586-1.414Z" clip-rule="evenodd"/>
+            <button class="button" id="mode" aria-pressed="false" aria-label="Dark Mode umschalten">
+                <span class="visually-hidden">Dark Mode umschalten</span>
+                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                    <path fill-rule="evenodd"
+                          d="M7.05 4.05A7 7 0 0 1 19 9c0 2.407-1.197 3.874-2.186 5.084l-.04.048C15.77 15.362 15 16.34 15 18a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1c0-1.612-.77-2.613-1.78-3.875l-.045-.056C6.193 12.842 5 11.352 5 9a7 7 0 0 1 2.05-4.95ZM9 21a1 1 0 0 1 1-1h4a1 1 0 1 1 0 2h-4a1 1 0 0 1-1-1Zm1.586-13.414A2 2 0 0 1 12 7a1 1 0 1 0 0-2 4 4 0 0 0-4 4 1 1 0 0 0 2 0 2 2 0 0 1 .586-1.414Z"
+                          clip-rule="evenodd" />
                 </svg>
-
             </button>
-
         </div>
     </nav>
+</header>
 
-<main>
-    <h1>Introducing our Software</h1>
-    <h2>Produkt1n</h2>
-    <p>Produkt1n is built on our previous productivity manager Produkt2o with some major improvements. Let us walk you through the biggest ones!</p>
+<main id="main-content">
+    <h1>Unsere Software</h1>
 
-    <h3>Proprietary Calendar with option to import various established calendars.
-        Share notes with your contacts for coop projects (reminders, important infos)
+    <section aria-labelledby="intro-title">
+        <h2 id="intro-title">Tools für klare Workflows</h2>
+        <p>
+            DINGIR entwickelt Software, die kreative und produktive Arbeit strukturiert:
+            Planung, Fokus, Zusammenarbeit und Überblick – ohne unnötigen Ballast.
+            Alle Prozesse in diesem Webshop sind zu Übungszwecken gemockt.
+        </p>
+    </section>
 
+    <section aria-labelledby="products-title" class="product-list">
+        <h2 id="products-title">Produkte im Überblick</h2>
 
+        <!-- Produkt 1 -->
+        <article class="product-card" aria-labelledby="p1-title">
+            <h3 id="p1-title">Produkt1n – Productivity Manager</h3>
+            <p>
+                Produkt1n ist der Nachfolger unseres bisherigen Managers <strong>Produkt2o</strong> – schneller,
+                klarer und auf moderne Workflows ausgelegt.
+            </p>
+            <ul>
+                <li>Eigener Kalender mit Import (z. B. iCal/Google) und klaren Projektansichten</li>
+                <li>Notizen & Checklisten teilbar für Kollaboration (Reminders, wichtige Infos)</li>
+                <li>Vorlagen für kreative Prozesse (Briefing, Review, Release)</li>
+            </ul>
+            <p><strong>Modell:</strong> Abo (Monat/Jahr) oder Einmal-Lizenz (Mock)</p>
+            <div class="cta-row">
+                <button
+                        type="button"
+                        class="button"
+                        data-add-to-cart
+                        data-id="produkt1n"
+                        data-name="Produkt1n"
+                        data-plan="Abo (Monat)"
+                        data-price-cents="990"
+                >
+                    In den Warenkorb
+                </button>
+            </div>
+        </article>
 
-    </h3>
+        <!-- Produkt 2 -->
+        <article class="product-card" aria-labelledby="p2-title">
+            <h3 id="p2-title">Produkt2o – Classic Workflow</h3>
+            <p>
+                Der solide Klassiker für einfache Projektlisten und tägliche Planung.
+                Ideal, wenn du wenig Setup willst und schnell starten möchtest.
+            </p>
+            <ul>
+                <li>Schnelle Aufgabenlisten mit Prioritäten</li>
+                <li>Wiederkehrende Tasks und Deadlines</li>
+                <li>Export als PDF/CSV (Mock)</li>
+            </ul>
+            <p><strong>Modell:</strong> Einmal-Lizenz (Mock)</p>
+            <div class="cta-row">
+                <button
+                        type="button"
+                        class="button"
+                        data-add-to-cart
+                        data-id="produkt1n"
+                        data-name="Produkt1n"
+                        data-plan="Abo (Monat)"
+                        data-price-cents="990"
+                >
+                    In den Warenkorb
+                </button>
+            </div>
+        </article>
 
-    <p>Produkt1n is the newest addition to our creative toolbox and opens up new avenues to engage with your work.</p>
+        <!-- Produkt 3 -->
+        <article class="product-card" aria-labelledby="p3-title">
+            <h3 id="p3-title">DINGIR Vault – Secure Notes</h3>
+            <p>
+                Verschlüsselte Notizen und Projekt-Dokumentation für Teams, die sensible Inhalte verwalten
+                (z. B. Kundenbriefings, Zugangsdaten, interne Roadmaps).
+            </p>
+            <ul>
+                <li>Ende-zu-Ende Verschlüsselung (konzeptionell, Mock)</li>
+                <li>Rollen & Freigaben (Owner/Editor/Viewer)</li>
+                <li>Audit-Log für Änderungen (Mock)</li>
+            </ul>
+            <p><strong>Modell:</strong> Abo (Team) (Mock)</p>
+            <div class="cta-row">
+                <button
+                        type="button"
+                        class="button"
+                        data-add-to-cart
+                        data-id="produkt1n"
+                        data-name="Produkt1n"
+                        data-plan="Abo (Monat)"
+                        data-price-cents="990"
+                >
+                    In den Warenkorb
+                </button>
+            </div>
+        </article>
+
+        <!-- Produkt 4 -->
+        <article class="product-card" aria-labelledby="p4-title">
+            <h3 id="p4-title">DINGIR Focus – Deep Work Timer</h3>
+            <p>
+                Ein Fokus-Tool für konzentriertes Arbeiten: Sessions, Pausen, Ziele und eine klare Statistik,
+                ohne Ablenkung.
+            </p>
+            <ul>
+                <li>Pomodoro- und Custom-Sessions</li>
+                <li>Blocklist/Do-not-disturb Hinweise (Mock)</li>
+                <li>Session-Report als Tagesübersicht (Mock)</li>
+            </ul>
+            <p><strong>Modell:</strong> Freemium (Mock)</p>
+            <div class="cta-row">
+                <button
+                        type="button"
+                        class="button"
+                        data-add-to-cart
+                        data-id="produkt1n"
+                        data-name="Produkt1n"
+                        data-plan="Abo (Monat)"
+                        data-price-cents="990"
+                >
+                    In den Warenkorb
+                </button>
+            </div>
+        </article>
+
+        <!-- Produkt 5 -->
+        <article class="product-card" aria-labelledby="p5-title">
+            <h3 id="p5-title">DINGIR Canvas – Project Whiteboard</h3>
+            <p>
+                Ideen brainstormen, strukturieren und als Aufgaben exportieren: ein digitales Whiteboard
+                für kreative Teams und Solo-Projekte.
+            </p>
+            <ul>
+                <li>Boards mit Karten, Clustern und Tags</li>
+                <li>Export in Aufgaben/Projekte (Mock)</li>
+                <li>Team-Collab mit Kommentaren (Mock)</li>
+            </ul>
+            <p><strong>Modell:</strong> Abo oder Einmal-Lizenz (Mock)</p>
+            <div class="cta-row">
+                <button
+                        type="button"
+                        class="button"
+                        data-add-to-cart
+                        data-id="produkt1n"
+                        data-name="Produkt1n"
+                        data-plan="Abo (Monat)"
+                        data-price-cents="990"
+                >
+                    In den Warenkorb
+                </button>
+            </div>
+        </article>
+
+    </section>
+
+    <section aria-labelledby="compare-title">
+        <h2 id="compare-title">Wie wähle ich das richtige Produkt?</h2>
+        <ul>
+            <li><strong>Produkt1n</strong>: Beste Wahl für strukturierte Projekte + Kalender + Kollaboration</li>
+            <li><strong>Produkt2o</strong>: Minimalistisch und schnell, wenn du „klassisch“ arbeiten willst</li>
+            <li><strong>Vault</strong>: Wenn Notizen/Dokumente besonders geschützt sein sollen</li>
+            <li><strong>Focus</strong>: Wenn du Konzentration und Routine verbessern willst</li>
+            <li><strong>Canvas</strong>: Wenn du Ideen visuell planen und dann umsetzen willst</li>
+        </ul>
+    </section>
 </main>
 
-    <footer class="bottom-bar">
-        <nav aria-label="Footer navigation">
-            <a href="./about.html">About</a>
-            <a href="./impressum.html">Impressum</a>
-            <a href="./terms.html">Terms</a>
-            <a href="licence.html">Licence</a>
-            <a href="privacy.html">privacy</a>
-            <a href="accessibility.html">accessibility</a>
-
-        </nav>
-    </footer>
-
+<footer class="bottom-bar">
+    <nav aria-label="Footer navigation">
+        <a href="./about.html">About</a>
+        <a href="./impressum.html">Impressum</a>
+        <a href="./terms.html">Terms</a>
+        <a href="./licence.html">Lizenz</a>
+        <a href="./privacy.html">Datenschutz</a>
+        <a href="./accessibility.html">Barrierefreiheit</a>
+    </nav>
+</footer>
 </body>
-
 </html>

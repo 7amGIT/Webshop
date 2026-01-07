@@ -1,66 +1,133 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <link rel="stylesheet" href="style.css">
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
     <script src="ui.js" defer></script>
-    <title>DINGIR</title>
+    <title>DINGIR – Webshop</title>
 </head>
+
 <body>
+<!-- Skip link -->
+<a href="#main-content" class="skip-link">Zum Inhalt springen</a>
 
-    <div id="cookie-overlay" class="cookie-overlay" hidden></div>
+<!-- Cookie banner (dialog) -->
+<div id="cookie-overlay" class="cookie-overlay" hidden></div>
 
-    <div id="cookie-box" class="cookie-box" role="dialog" aria-modal="true"
-         aria-labelledby="cookie-title" hidden>
-        <h2 id="cookie-title">Cookies</h2>
-        <p>We use cookies …</p>
+<section
+        id="cookie-box"
+        class="cookie-box"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="cookie-title"
+        aria-describedby="cookie-desc"
+        hidden
+>
+    <h2 id="cookie-title">Cookie-Einstellungen</h2>
+    <p id="cookie-desc">
+        Wir verwenden Cookies, um grundlegende Funktionen bereitzustellen und (optional) die Nutzung zu analysieren.
+        In diesem Übungsprojekt sind Analyse-Funktionen nur gemockt. Details findest du in der
+        <a href="./privacy.html">Datenschutzerklärung</a>.
+    </p>
 
-        <button id="cookie-accept" class="button">Accept</button>
-        <button id="cookie-reject" class="button">Reject</button>
+    <div class="cookie-actions">
+        <button id="cookie-accept" class="button">Akzeptieren</button>
+        <button id="cookie-reject" class="button button-secondary">Ablehnen</button>
     </div>
+</section>
 
-    <a href="#main-content" class="skip-link">Skip to content</a>
-    <nav class="top-bar">
-        <img class="logo" src="logo.png" alt="logo">
-        <div class="buttons">
-            <a href="./index.html" class="button">Home</a>
-            <a href="./software.html" class="button" id="software-button"> Software </a>
-            <a href="./about.html" class="button"> About </a>
-            <a href="./basket.html" class="button">
-                <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312"/>
+<!-- Header / Navigation -->
+<header>
+    <nav class="top-bar" aria-label="Hauptnavigation">
+        <a href="./index.html" class="brand" aria-label="DINGIR Startseite">
+            <img class="logo" src="logo.png" alt="DINGIR Logo" />
+        </a>
+
+        <div class="buttons" role="group" aria-label="Navigation und Einstellungen">
+            <a href="./index.html" class="button" aria-current="page">Home</a>
+            <a href="./software.html" class="button" id="software-button">Software</a>
+            <a href="./about.html" class="button">About</a>
+
+            <a href="./basket.html" class="button" aria-label="Warenkorb öffnen">
+                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312" />
                 </svg>
-
             </a>
-            <button class="button" id="mode">
-                <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 9a3 3 0 0 1 3-3m-2 15h4m0-3c0-4.1 4-4.9 4-9A6 6 0 1 0 6 9c0 4 4 5 4 9h4Z"/>
+
+            <button class="button" id="mode" aria-pressed="false" aria-label="Nacht Modus umschalten">
+                <span class="visually-hidden">Dark Mode umschalten</span>
+                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M9 9a3 3 0 0 1 3-3m-2 15h4m0-3c0-4.1 4-4.9 4-9A6 6 0 1 0 6 9c0 4 4 5 4 9h4Z" />
                 </svg>
             </button>
         </div>
     </nav>
-    <main id="main-content">
-        <h1>Home</h1>
-        <h2>Welcome to DINGIR</h2>
-        <h3>explore our newest product: Dingir produkt1n</h3>
+</header>
 
-        <p>Our newest addition to our creativity suite is the most cutting edge productivity manager we have released to date</p>
-        <p>produkt1n can help you manage any creative task you want - to bring out the best in your process and keep your workflow neatly organized.</p>
-        <p>Our team has worked hard to improve on produkt2o. Read more in our Software section.</p>
-        <h3>other software</h3>
-    </main>
+<!-- Main content -->
+<main id="main-content">
+    <h1>DINGIR Webshop</h1>
 
+    <section aria-labelledby="hero-title" class="hero">
+        <h2 id="hero-title">Software, die Ordnung in kreative Arbeit bringt.</h2>
+        <p>
+            DINGIR entwickelt Tools für strukturierte Workflows: klar, zuverlässig und langfristig nutzbar.
+            Entdecke unsere Produkte und wähle das Modell, das zu deinem Alltag passt.
+        </p>
 
-    <footer class="bottom-bar">
-        <nav aria-label="Footer navigation">
-            <a href="./about.html">About</a>
-            <a href="./impressum.html">Impressum</a>
-            <a href="./terms.html">Terms</a>
-            <a href="licence.html">Licence</a>
-            <a href="privacy.html">privacy</a>
-            <a href="accessibility.html">accessibility</a>
+        <div class="cta-row">
+            <a class="button" href="./software.html">Produkte ansehen</a>
+            <a class="button button-secondary" href="./about.html">Mehr über DINGIR</a>
+        </div>
+    </section>
 
-        </nav>
-    </footer>
+    <section aria-labelledby="featured-title" class="featured">
+        <h2 id="featured-title">Neu: DINGIR Produkt1n</h2>
+        <p>
+            Produkt1n ist unser aktuelles Tool für Aufgaben- und Projektorganisation – gedacht für kreative Prozesse,
+            in denen Übersicht, Fokus und saubere Abläufe zählen.
+        </p>
+
+        <ul>
+            <li>Projekte strukturieren (Phasen, Aufgaben, Deadlines)</li>
+            <li>Klare Workflows mit Vorlagen und Checklisten</li>
+            <li>Saubere Übersicht über Prioritäten und Fortschritt</li>
+        </ul>
+
+        <p>
+            Bereits Nutzer:innen von <strong>Produkt2o</strong>? Produkt1n baut auf den wichtigsten Erkenntnissen auf und
+            verbessert Bedienbarkeit, Struktur und Konsistenz.
+        </p>
+
+        <div class="cta-row">
+            <a class="button" href="./software.html">Details & Preise</a>
+            <a class="button button-secondary" href="./basket.html">Zum Warenkorb</a>
+        </div>
+    </section>
+
+    <section aria-labelledby="other-products-title" class="grid">
+        <h2 id="other-products-title">Weitere Software</h2>
+        <p>
+            Neben Produkt1n bieten wir weitere Tools, die unterschiedliche Workflows abdecken.
+            Eine vollständige Übersicht findest du in der Software-Sektion.
+        </p>
+        <a class="button button-secondary" href="./software.html">Alle Produkte vergleichen</a>
+    </section>
+</main>
+
+<!-- Footer -->
+<footer class="bottom-bar">
+    <nav aria-label="Footer Navigation">
+        <a href="./about.html">About</a>
+        <a href="./impressum.html">Impressum</a>
+        <a href="./terms.html">Terms</a>
+        <a href="./licence.html">Lizenz</a>
+        <a href="./privacy.html">Datenschutz</a>
+        <a href="./accessibility.html">Barrierefreiheit</a>
+    </nav>
+</footer>
 </body>
 </html>
