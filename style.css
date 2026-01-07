@@ -50,14 +50,6 @@ body.light-mode {
     transition-duration: 2s;
 }
 
-footer.dark-mode {
-    background-color: whitesmoke;
-}
-
-footer.light-mode {
-    color: #382d45;
-}
-
 .light-mode .bottom-bar {
     background-color: whitesmoke;
     color: #382d45;
@@ -94,6 +86,7 @@ footer.light-mode {
     padding: 1.25rem;
     border-radius: 16px;
     background: white;
+    color: #382d45;
 }
 
 /* Lock scrolling behind the popup */
@@ -211,7 +204,7 @@ button {
 }
 
 .bottom-bar .links {
-    color: gray;
+    color: whitesmoke;
     text-decoration: none;
     margin: 8px;
     font-size: 90%;
@@ -219,7 +212,7 @@ button {
 
 .bottom-bar .links:hover,
 .bottom-bar .links:focus-visible {
-    color: lightgray;
+    color: cadetblue;
     text-decoration: underline;
 }
 
