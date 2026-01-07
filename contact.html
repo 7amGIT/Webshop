@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="ui.js" defer></script>
+    <title>Kontakt – DINGIR</title>
+</head>
+
+<body>
+<a href="#main-content" class="skip-link">Zum Inhalt springen</a>
+
+<header>
+    <nav class="top-bar" aria-label="Hauptnavigation">
+        <a href="./index.html" class="brand" aria-label="DINGIR Startseite">
+            <img class="logo" src="logo.png" alt="DINGIR Logo" />
+        </a>
+
+        <div class="buttons" role="group" aria-label="Navigation und Einstellungen">
+            <a href="./index.html" class="button">Home</a>
+            <a href="./software.html" class="button">Software</a>
+            <a href="./about.html" class="button">About</a>
+
+            <a href="./basket.html" class="button" aria-label="Warenkorb öffnen">
+                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312" />
+                </svg>
+            </a>
+
+            <button class="button" id="mode" aria-pressed="false" aria-label="Nachtmodus umschalten">
+                <span class="visually-hidden">Dark Mode umschalten</span>
+                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                    <path fill-rule="evenodd"
+                          d="M7.05 4.05A7 7 0 0 1 19 9c0 2.407-1.197 3.874-2.186 5.084l-.04.048C15.77 15.362 15 16.34 15 18a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1c0-1.612-.77-2.613-1.78-3.875l-.045-.056C6.193 12.842 5 11.352 5 9a7 7 0 0 1 2.05-4.95ZM9 21a1 1 0 0 1 1-1h4a1 1 0 1 1 0 2h-4a1 1 0 0 1-1-1Zm1.586-13.414A2 2 0 0 1 12 7a1 1 0 1 0 0-2 4 4 0 0 0-4 4 1 1 0 0 0 2 0 2 2 0 0 1 .586-1.414Z"
+                          clip-rule="evenodd" />
+                </svg>
+            </button>
+        </div>
+    </nav>
+</header>
+
+<main id="main-content">
+    <h1>Kontakt</h1>
+
+    <p>
+        Hast du Fragen, brauchst du Unterstützung oder möchtest Feedback geben?
+        Wir helfen gerne weiter. Wähle einfach einen der folgenden Kontaktwege.
+    </p>
+
+    <section aria-labelledby="contact-options-title" class="grid">
+        <h2 id="contact-options-title">Kontaktmöglichkeiten</h2>
+
+        <address>
+            <p>
+                <strong>E-Mail:</strong>
+                <a class="mail" href="mailto:dingir.software@email.com">dingir.software@email.com</a>
+            </p>
+
+            <p>
+                <strong>Telefon:</strong>
+                <a class="mail" href="tel:+43123456789">+43 123 456 789</a>
+            </p>
+
+            <p>
+                <strong>Postanschrift:</strong><br />
+                DINGIR Software e.U.<br />
+                Musterstraße 1<br />
+                1010 Wien<br />
+                Österreich
+            </p>
+        </address>
+    </section>
+
+    <section aria-labelledby="contact-form-title" class="newsletter">
+        <h2 id="contact-form-title">Kontaktformular (Mock)</h2>
+        <p>
+            Dieses Formular dient nur zu Demonstrationszwecken. Es werden keine echten Nachrichten versendet.
+        </p>
+
+        <form class="newsletter-form" action="#" method="post">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" autocomplete="name" />
+
+            <label for="email">E-Mail</label>
+            <input id="email" name="email" type="email" autocomplete="email" />
+
+            <label for="message">Nachricht</label>
+            <textarea id="message" name="message" rows="5"></textarea>
+
+            <button class="button-free" type="button" onclick="alert('Danke! Nachricht wurde gesendet (Mock).')">
+                Absenden
+            </button>
+        </form>
+    </section>
+</main>
+
+<footer class="bottom-bar">
+    <nav aria-label="Footer Navigation">
+        <a class="links" href="./about.html">Über uns</a>
+        <a class="links" href="./impressum.html">Impressum</a>
+        <a class="links" href="./terms.html">AGB</a>
+        <a class="links" href="./licence.html">Lizenz</a>
+        <a class="links" href="./privacy.html">Datenschutz</a>
+        <a class="links" href="./accessibility.html">Barrierefreiheit</a>
+        <a class="links" href="./contact.html">Kontakt</a>
+    </nav>
+</footer>
+</body>
+</html>
