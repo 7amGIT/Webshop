@@ -15,20 +15,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const STORAGE_KEY = 'dingir-theme';
 
     function getPreferredTheme() {
-        // 1) Saved setting (if available)
         try {
             const saved = localStorage.getItem(STORAGE_KEY);
             if (saved === 'dark' || saved === 'light') return saved;
         } catch (_) {
-            // ignore (private mode / blocked storage)
         }
 
-        // 2) System preference
+        //System preference
         if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
             return 'dark';
         }
 
-        // 3) Default
+        //Default
         return 'light';
     }
 
@@ -48,14 +46,13 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
             localStorage.setItem(STORAGE_KEY, theme);
         } catch (_) {
-            // ignore
         }
     }
 
     // Initial theme
     setTheme(getPreferredTheme());
 
-    // Click handler (only if button exists on this page)
+    // Click handler
     if (toggleButton) {
         toggleButton.addEventListener('click', () => {
             const currentlyDark = body.classList.contains('dark-mode');
@@ -99,7 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.classList.add("modal-open");
     }
 
-// Only wire banner if all elements exist
+//banner if all elements exist
     if (overlay && box && acceptBtn && rejectBtn) {
         acceptBtn.addEventListener("click", () => {
             setConsent("accept");
@@ -277,7 +274,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-// Call these after your DOMContentLoaded setup has run:
     setupAddToCartButtons();
     renderCart();
     setupCheckoutButton();

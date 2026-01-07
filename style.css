@@ -288,4 +288,63 @@ button {
             box-shadow 0.15s ease;
 }
 
+.hero-title{
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 5rem 5rem;
+    color: white;
+    overflow: hidden;
+}
+
+.hero-title::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background: url("scott-rodgerson-z0MDyylvY1k-unsplash.jpg") center / cover no-repeat;
+    transform: scaleX(-1);
+    filter: grayscale(100%);
+    z-index:-1;
+}
+
+.hero-title2{
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 5rem 5rem;
+    color: white;
+    overflow: hidden;
+}
+
+.hero-title2::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background: url("scott-rodgerson-z0MDyylvY1k-unsplash.jpg") center / cover no-repeat;
+    transform: scaleX(-2);
+    filter: grayscale(100%);
+    z-index:-1;
+}
+.hero-title3{
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 5rem 5rem;
+    color: white;
+    overflow: hidden;
+}
+
+.hero-title3::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background: url("nicholas-santoianni-lzRlEIeNo70-unsplash.jpg") center / cover no-repeat;
+    transform: scaleX(1);
+    filter: grayscale(100%);
+    z-index:-1;
+}
+
+
+
+
 
