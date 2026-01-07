@@ -66,58 +66,56 @@ document.addEventListener('DOMContentLoaded', () => {
     //banner logic
 
     const overlay = document.getElementById("cookie-overlay");
-    const box   = document.getElementById("cookie-box");
-
+    const box = document.getElementById("cookie-box");
     const acceptBtn = document.getElementById("cookie-accept");
     const rejectBtn = document.getElementById("cookie-reject");
 
-    const cookieName =  'dingir-cookie-consent';
+    const cookieName = "dingir-cookie-consent";
 
     function setConsent(value) {
-        document.cookie = `${cookieName}=${value}; Max-Age=${0}; Path=/; SameSite=Lax`;
+        // keep consent for 180 days (instead of deleting immediately)
+        const maxAge = 60 * 60 * 24 * 180;
+        document.cookie = `${cookieName}=${value}; Max-Age=${maxAge}; Path=/; SameSite=Lax`;
     }
 
     function getCookie(name) {
         return document.cookie
             .split("; ")
-            .find(row => row.startsWith(name + "="))
+            .find((row) => row.startsWith(name + "="))
             ?.split("=")[1];
     }
 
     function hideBanner() {
         overlay.hidden = true;
         box.hidden = true;
-
-        document.documentElement.classList.remove('modal-open');
-        document.body.classList.remove('modal-open');
+        document.documentElement.classList.remove("modal-open");
+        document.body.classList.remove("modal-open");
     }
 
     function showBanner() {
         overlay.hidden = false;
         box.hidden = false;
-        document.documentElement.classList.add('modal-open');
-        document.body.classList.add('modal-open');
+        document.documentElement.classList.add("modal-open");
+        document.body.classList.add("modal-open");
     }
 
-    acceptBtn.addEventListener('click', () => {
-        setConsent('accept');
-        hideBanner();
-    })
+// Only wire banner if all elements exist
+    if (overlay && box && acceptBtn && rejectBtn) {
+        acceptBtn.addEventListener("click", () => {
+            setConsent("accept");
+            hideBanner();
+        });
 
-    rejectBtn.addEventListener('click', () => {
-        setConsent('reject');
-        hideBanner();
-        alert('Cookies rejected! Some functionality may be limited.')
-    })
+        rejectBtn.addEventListener("click", () => {
+            setConsent("reject");
+            hideBanner();
+            alert("Cookies rejected! Some functionality may be limited.");
+        });
 
-
-    const consent = getCookie(cookieName);
-    if (consent=="accept" || consent=="reject") {
-        hideBanner();
-    } else {
-        showBanner();
+        const consent = getCookie(cookieName);
+        if (consent === "accept" || consent === "reject") hideBanner();
+        else showBanner();
     }
-
 
     //cart logic
 

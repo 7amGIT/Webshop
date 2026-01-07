@@ -1,13 +1,25 @@
 body {
-    font-family:  Helvetica, sans-serif;
+    font-family: Helvetica, sans-serif;
     height: 100%;
     min-height: 100vh;
     margin: 0;
-    padding: 140px;
+    display: flex;
+    flex-direction: column;
+    padding: 100px;
+}
+
+h1{
+    font-size: 8em;
+    width: 20px;
+    margin: -10px;
+}
+
+main {
+    flex: 1;
 }
 
 .top-bar {
-    position : fixed;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -27,8 +39,8 @@ body {
 
 body.dark-mode {
     background-color: #272a30;
-    /*background-image: linear-gradient(170deg, #382d45 0%, #5f526e 100%);
-    */color: whitesmoke;
+
+    color: whitesmoke;
     transition-duration: 2s;
 }
 
@@ -46,6 +58,19 @@ footer.light-mode {
     color: #382d45;
 }
 
+.light-mode .bottom-bar {
+    background-color: whitesmoke;
+    color: #382d45;
+    transition-duration: 2s;
+}
+
+.dark-mode .bottom-bar {
+    background-color: #272a30;
+    color: whitesmoke;
+    transition-duration: 2s;
+}
+
+
 .logo {
     height: 80px;
 }
@@ -53,7 +78,7 @@ footer.light-mode {
 .cookie-overlay {
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,0.55);
+    background: rgba(0, 0, 0, 0.55);
     z-index: 9998;
 }
 
@@ -90,9 +115,6 @@ body.modal-open {
     text-align: center;
 }
 
-.theme-icon { width: 24px; height: 24px; }
-body.light-mode .icon-moon { display: none; }
-body.dark-mode  .icon-sun  { display: none; }
 
 #mode {
     width: 100%;
@@ -107,18 +129,20 @@ body.dark-mode  .icon-sun  { display: none; }
 a {
     text-decoration: none;
 }
+
 button {
     font-family: inherit;
     font-size: 100%;
     margin: 0;
 
 }
-.button{
+
+.button {
     background-color: transparent;
     display: flex;
     gap: 12px;
     color: whitesmoke;
-    font-family:  Helvetica;
+    font-family: Helvetica;
     font-weight: bold;
 
     border: 6px;
@@ -128,7 +152,26 @@ button {
 
 }
 
-#software-button:hover {
+.button-free {
+    background-color: rgba(46, 54, 99, 0.7);
+    display: table;
+    gap: 12px;
+    color: whitesmoke;
+    font-family: Helvetica;
+    font-weight: bold;
+
+    border: 6px;
+    border-radius: 100px;
+    padding: 3px 20px;
+    transition-duration: 0.9s;
+    margin-bottom: 4px
+
+}
+
+.button-free:hover {
+    background-color: whitesmoke;
+    color: rgba(46, 54, 99, 1);
+    transition-duration: 0.6s;
 }
 
 
@@ -141,6 +184,7 @@ button {
     padding: 8px;
     z-index: 100;
 }
+
 .skip-link:focus {
     top: 0;
 }
@@ -156,20 +200,87 @@ button {
 
 
 .button:hover {
-    background-color: whitesmoke; color: #272a30; transition-duration: 0.6s;
+    background-color: whitesmoke;
+    color: #272a30;
+    transition-duration: 0.6s;
 }
 
 .bottom-bar {
-    position: relative;
-    top: 100vh;
-    left: 0;
-    width: 100%;
-
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    padding: 20px 20px;
-    gap: 15px;
-    font-family:  Helvetica;
+    padding: 5rem;
+    text-align: center;
 }
+
+.bottom-bar .links {
+    color: gray;
+    text-decoration: none;
+    margin: 8px;
+    font-size: 90%;
+}
+
+.bottom-bar .links:hover,
+.bottom-bar .links:focus-visible {
+    color: lightgray;
+    text-decoration: underline;
+}
+
+.mail {
+    color: white;
+    text-decoration: none;
+}
+
+.dark-mode .mail {
+    color: white;
+    transition-duration: 2s;
+
+}
+
+.light-mode .mail {
+    color: rgba(46, 54, 99, 1);
+    transition-duration: 2s;
+}
+
+.mail:hover {
+    color: lightblue;
+    transition-duration: 0.1s;
+}
+
+.newsletter{
+    border-radius: 18px;
+    backdrop-filter: blur(10px);
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+
+
+.newsletter-form{
+    display: grid;
+    gap: 0.75rem;
+    max-width: 520px;
+}
+
+.newsletter-form label {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--text);
+}
+.newsletter-form input,
+.newsletter-form textarea {
+    width: 100%;
+    padding: 0.65rem 0.8rem;
+
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    background: rgba(255,255,255,0.06);
+
+    color: var(--text);
+    font-size: 0.95rem;
+    line-height: 1.4;
+
+    transition:
+            border-color 0.15s ease,
+            background-color 0.15s ease,
+            box-shadow 0.15s ease;
+}
+
 

@@ -1,61 +1,163 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <link rel="stylesheet" href="style.css">
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
     <script src="ui.js" defer></script>
     <title>Allgemeine Geschäftsbedingungen – DINGIR</title>
 </head>
 <body>
+<header>
+    <nav class="top-bar" aria-label="Hauptnavigation">
+        <a href="./index.html" class="brand" aria-label="DINGIR Startseite">
+            <img class="logo" src="logo.png" alt="DINGIR Logo" />
+        </a>
 
+        <div class="buttons" role="group" aria-label="Navigation und Einstellungen">
+            <a href="./index.html" class="button" aria-current="page">Home</a>
+            <a href="./software.html" class="button" id="software-button">Software</a>
+            <a href="./about.html" class="button">About</a>
+
+            <a href="./basket.html" class="button" aria-label="Warenkorb öffnen">
+                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312" />
+                </svg>
+            </a>
+
+            <button class="button" id="mode" aria-pressed="false" aria-label="Nacht Modus umschalten">
+                <span class="visually-hidden">Dark Mode umschalten</span>
+                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M9 9a3 3 0 0 1 3-3m-2 15h4m0-3c0-4.1 4-4.9 4-9A6 6 0 1 0 6 9c0 4 4 5 4 9h4Z" />
+                </svg>
+            </button>
+        </div>
+    </nav>
+</header>
 <main id="main-content">
     <h1>Allgemeine Geschäftsbedingungen (AGB)</h1>
 
     <h2>1. Geltungsbereich</h2>
     <p>
-        Diese Allgemeinen Geschäftsbedingungen gelten für alle Bestellungen
-        und Käufe von Softwareprodukten über den Webshop von DINGIR.
+        Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für alle Verträge über den
+        Erwerb und die Nutzung von Softwareprodukten, die über den Webshop von
+        <strong>DINGIR</strong> abgeschlossen werden.
+    </p>
+    <p>
+        Abweichende Bedingungen der Kund:innen finden keine Anwendung,
+        sofern ihnen nicht ausdrücklich schriftlich zugestimmt wurde.
     </p>
 
-    <h2>2. Vertragsgegenstand</h2>
+    <h2>2. Anbieter</h2>
+    <p>
+        Anbieter der Softwareprodukte ist:
+    </p>
+    <p>
+        <strong>DINGIR Software e.U.</strong><br>
+        Musterstraße 1<br>
+        1010 Wien<br>
+        Österreich
+    </p>
+
+    <h2>3. Vertragsgegenstand</h2>
     <p>
         Vertragsgegenstand ist die Bereitstellung von Softwarelizenzen
-        sowie ggf. begleitender Dokumentation.
+        sowie gegebenenfalls begleitender Dokumentation und digitaler Inhalte.
+        Ein Anspruch auf bestimmte Funktionalitäten besteht nur im Rahmen der
+        jeweiligen Produktbeschreibung.
     </p>
 
-    <h2>3. Vertragsabschluss</h2>
+    <h2>4. Vertragsabschluss</h2>
     <p>
-        Der Vertrag kommt zustande, sobald der Bestellvorgang abgeschlossen wird.
-        Da es sich um eine Übungswebsite handelt, sind alle Prozesse gemockt.
+        Die Darstellung der Produkte im Webshop stellt kein rechtlich bindendes Angebot,
+        sondern eine unverbindliche Aufforderung zur Abgabe einer Bestellung dar.
+    </p>
+    <p>
+        Der Vertrag kommt grundsätzlich mit Abschluss des Bestellvorgangs zustande.
+        <strong>Im Rahmen dieses Übungsprojekts sind alle Bestell- und Zahlungsprozesse
+            ausschließlich simuliert („gemockt“).</strong>
     </p>
 
-    <h2>4. Preise und Zahlung</h2>
+    <h2>5. Preise und Zahlungsbedingungen</h2>
     <p>
         Alle angegebenen Preise verstehen sich in Euro.
-        Zahlungsprozesse werden auf dieser Website nur simuliert.
+        Etwaige Steuern sind – sofern angegeben – im Preis enthalten.
+    </p>
+    <p>
+        Zahlungsarten und Zahlungsabwicklung werden auf dieser Website
+        ausschließlich zu Demonstrationszwecken dargestellt.
+        Es erfolgt keine tatsächliche Zahlungsabwicklung.
     </p>
 
-    <h2>5. Widerrufsrecht</h2>
+    <h2>6. Lieferung und Bereitstellung</h2>
     <p>
-        Bei digitalen Inhalten kann das Widerrufsrecht erlöschen,
-        sobald mit der Bereitstellung der Software begonnen wurde.
+        Die Bereitstellung der Software erfolgt digital.
+        Ein physischer Versand findet nicht statt.
+    </p>
+    <p>
+        Da es sich um ein Übungsprojekt handelt, wird keine tatsächliche Software ausgeliefert.
     </p>
 
-    <h2>6. Haftung</h2>
+    <h2>7. Widerrufsrecht</h2>
     <p>
-        Für Schäden haftet DINGIR nur bei Vorsatz oder grober Fahrlässigkeit,
+        Verbraucher:innen steht grundsätzlich ein gesetzliches Widerrufsrecht zu.
+        Bei digitalen Inhalten kann dieses Widerrufsrecht erlöschen,
+        sobald mit der Bereitstellung der Software begonnen wurde,
+        sofern die Kund:innen dem ausdrücklich zugestimmt haben.
+    </p>
+    <p>
+        Im Rahmen dieses Übungsprojekts erfolgt kein echter Widerrufsvorgang.
+    </p>
+
+    <h2>8. Nutzungsrechte</h2>
+    <p>
+        Die Nutzung der Software richtet sich nach den jeweils geltenden
+        Lizenzbedingungen, die auf der Lizenzseite des Webshops beschrieben sind.
+        Weitergehende Rechte werden nicht eingeräumt.
+    </p>
+
+    <h2>9. Haftung</h2>
+    <p>
+        DINGIR haftet für Schäden nur bei Vorsatz oder grober Fahrlässigkeit,
         soweit gesetzlich zulässig.
     </p>
-
-    <h2>7. Schlussbestimmungen</h2>
     <p>
-        Es gilt österreichisches Recht.
-        Sollten einzelne Bestimmungen unwirksam sein,
+        Für leichte Fahrlässigkeit haftet DINGIR nur bei Verletzung wesentlicher
+        Vertragspflichten (Kardinalpflichten) und beschränkt auf den vorhersehbaren,
+        typischerweise eintretenden Schaden.
+    </p>
+
+    <h2>10. Schlussbestimmungen</h2>
+    <p>
+        Es gilt österreichisches Recht unter Ausschluss der Kollisionsnormen.
+    </p>
+    <p>
+        Sollte eine Bestimmung dieser AGB ganz oder teilweise unwirksam sein,
         bleibt die Wirksamkeit der übrigen Bestimmungen unberührt.
     </p>
+
+    <h2>11. Hinweis zum Projektstatus</h2>
+    <p>
+        Diese Website und die darin enthaltenen Allgemeinen Geschäftsbedingungen
+        wurden im Rahmen einer universitären Lehrveranstaltung erstellt und dienen
+        ausschließlich zu Übungs- und Demonstrationszwecken.
+        Es handelt sich nicht um ein tatsächlich betriebenes kommerzielles Angebot.
+    </p>
 </main>
-
-
+<footer class="bottom-bar">
+    <hr>
+    <nav aria-label="Footer Navigation">
+        <a class='links' href="./about.html">About</a>
+        <a class='links' href="./impressum.html">Impressum</a>
+        <a class='links' href="./terms.html">Terms</a>
+        <a class='links' href="./licence.html">Lizenz</a>
+        <a class='links' href="./privacy.html">Datenschutz</a>
+        <a class='links' href="./accessibility.html">Barrierefreiheit</a>
+        <a class="links" href="./contact.html">Kontakt</a>
+    </nav>
+</footer>
 
 </body>
 </html>
