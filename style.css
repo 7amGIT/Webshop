@@ -29,7 +29,7 @@ main {
     justify-content: space-between;
 
     padding: 1px 1px;
-    background-color: rgba(46, 54, 99, 0.8);
+    background-color: rgba(46, 54, 99, 0.9);
     backdrop-filter: blur(8px);
 }
 
@@ -46,13 +46,13 @@ body.dark-mode {
 
 body.light-mode {
     background-color: whitesmoke;
-    color: #382d45;
+    color: rgba(10,10,10,0.9);
     transition-duration: 2s;
 }
 
 .light-mode .bottom-bar {
     background-color: whitesmoke;
-    color: #382d45;
+    color: rgba(10,10,10,0.9);
     transition-duration: 2s;
 }
 
@@ -146,27 +146,40 @@ button {
 }
 
 .button-free {
-    background-color: rgba(46, 54, 99, 0.7);
-    display: table;
+    display: inline-flex;
     gap: 12px;
-    color: whitesmoke;
-    font-family: Helvetica;
     font-weight: bold;
 
-    border: 6px;
     border-radius: 100px;
     padding: 3px 20px;
-    transition-duration: 0.9s;
-    margin-bottom: 4px
+    margin-bottom: 4px;
 
+    transition: background-color 0.6s ease, color 0.6s ease;
 }
 
-.button-free:hover {
+
+.light-mode .button-free {
+    background-color: rgba(46, 54, 99, 0.9);
+    color: whitesmoke;
+    transition-duration: 2s;
+}
+
+
+.light-mode .button-free:hover {
     background-color: whitesmoke;
     color: rgba(46, 54, 99, 1);
-    transition-duration: 0.6s;
 }
 
+.dark-mode .button-free {
+    background-color: whitesmoke;
+    color: #382d45;
+    transition-duration: 2s;
+}
+
+.dark-mode .button-free:hover {
+    background-color: rgba(46, 54, 99, 0.7);
+    color: whitesmoke;
+}
 
 .skip-link {
     position: absolute;
